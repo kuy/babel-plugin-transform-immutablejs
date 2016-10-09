@@ -1,3 +1,4 @@
+[![NPM Package][npm_img]][npm_site]
 [![Travis][ci_img]][ci_site]
 [![Dependency Status][david_img]][david_site]
 
@@ -69,6 +70,8 @@ MIT
 Yuki Kodama / [@kuy](https://twitter.com/kuy)
 
 
+[npm_img]: https://img.shields.io/npm/v/babel-plugin-transform-immutablejs.svg
+[npm_site]: https://www.npmjs.org/package/babel-plugin-transform-immutablejs
 [ci_img]: https://img.shields.io/travis/kuy/babel-plugin-transform-immutablejs/master.svg?style=flat-square
 [ci_site]: https://travis-ci.org/kuy/babel-plugin-transform-immutablejs
 [david_img]: https://img.shields.io/david/kuy/babel-plugin-transform-immutablejs.svg

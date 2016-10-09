@@ -1,11 +1,11 @@
 # babel-plugin-transform-immutablejs
 
-Transform built-in collection operations to Immutable.js ones.
+Transform built-in collection operations to [Immutable.js](https://facebook.github.io/immutable-js/) ones.
 
 
 ## Usage
 
-Too hot, to use :P
+Too hot 🔥, to use 😵
 
 
 ## Example

@@ -33,6 +33,22 @@ module.exports = ({ types: t }) => {
             )
           );
         }
+      },
+      ArrayExpression(path) {
+        path.replaceWith(
+          t.callExpression(
+            t.memberExpression(
+              t.memberExpression(
+                t.identifier('Immutable'),
+                t.identifier('List'),
+                false
+              ),
+              t.identifier('of'),
+              false
+            ),
+            path.node.elements
+          )
+        );
       }
     }
   };

@@ -15,6 +15,14 @@ module.exports = ({ types: t }) => {
               ]
             )
           );
+        } else if (path.node.property.type === 'Identifier' && path.node.property.name === 'length') {
+          path.replaceWith(
+            t.memberExpression(
+              path.node.object,
+              t.identifier('size'),
+              false
+            )
+          );
         }
       },
       AssignmentExpression(path) {

@@ -49,7 +49,31 @@ module.exports = ({ types: t }) => {
             path.node.elements
           )
         );
+      },
+      ObjectExpression(path) {
+        if (!isWrappedImmutableMap(path)) {
+          path.replaceWith(
+            t.callExpression(
+              t.memberExpression(
+                t.identifier('Immutable'),
+                t.identifier('Map'),
+                false
+              ),
+              [
+                path.node,
+              ]
+            )
+          );
+        }
       }
     }
   };
+
+  function isWrappedImmutableMap(path) {
+    const node = path.parentPath.node;
+    return node.type === 'CallExpression' && 
+      node.callee.type === 'MemberExpression' && 
+        node.callee.object.type   === 'Identifier' && node.callee.object.name   === 'Immutable' &&
+        node.callee.property.type === 'Identifier' && node.callee.property.name === 'Map';
+  }
 };

@@ -4,10 +4,13 @@
   ],
   "env": {
     "development": {
-      "sourceMap": "inline",
+      "sourceMaps": "inline",
       "presets": [
         "power-assert"
       ]
+    },
+    "production": {
+      "sourceMaps": false
     }
   }
 }

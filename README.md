@@ -1,3 +1,6 @@
+[![Travis][ci_img]][ci_site]
+[![Dependency Status][david_img]][david_site]
+
 # babel-plugin-transform-immutablejs
 
 Transform built-in collection operations to [Immutable.js](https://facebook.github.io/immutable-js/) ones.
@@ -10,14 +13,14 @@ Too hot 🔥, to use 😵
 
 ## Example
 
-**Before**:
+Before:
 ```
 const list = ["A", "B", "C"];
 list[1] = "X";
 console.log(list[1]);
 ```
 
-**After**:
+After:
 ```
 const list = Immutable.List.of("A", "B", "C");
 list.set(1, "X");
@@ -39,6 +42,8 @@ console.log(list.get(1));
 - [ ] `obj['a']` (accessing Object member)
 - [ ] `obj['a'] = 10` (assignment of Object member)
 
+### ... and more
+
 
 ## Development
 
@@ -47,7 +52,7 @@ $ npm install
 $ npm start
 ```
 
-### Test (single shot)
+### Run test
 
 ```
 $ npm test
@@ -62,3 +67,9 @@ MIT
 ## Author
 
 Yuki Kodama / [@kuy](https://twitter.com/kuy)
+
+
+[ci_img]: https://img.shields.io/travis/kuy/babel-plugin-transform-immutablejs/master.svg?style=flat-square
+[ci_site]: https://travis-ci.org/kuy/babel-plugin-transform-immutablejs
+[david_img]: https://img.shields.io/david/kuy/babel-plugin-transform-immutablejs.svg
+[david_site]: https://david-dm.org/kuy/babel-plugin-transform-immutablejs
